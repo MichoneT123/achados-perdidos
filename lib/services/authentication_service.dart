@@ -18,13 +18,5 @@ class AuthenticationService {
   // Método para fazer login
   Future<User?> loginUser(String email, String password) async {
     // Procura o usuário com o email fornecido
-    final user = _users.firstWhere((user) => user.email == email, orElse: () => null);
-
-    // Verifica se o usuário foi encontrado e se a senha está correta
-    if (user != null && user.password == password) {
-      return user;
-    } else {
-      return null;
-    }
   }
 }
