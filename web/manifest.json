@@ -1,6 +1,6 @@
 {
-    "name": "achadosapi",
-    "short_name": "achadosapi",
+    "name": "perdidos_e_achados",
+    "short_name": "perdidos_e_achados",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

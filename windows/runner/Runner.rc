@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "achadosapi" "\0"
+            VALUE "FileDescription", "perdidos_e_achados" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "achadosapi" "\0"
+            VALUE "InternalName", "perdidos_e_achados" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "achadosapi.exe" "\0"
-            VALUE "ProductName", "achadosapi" "\0"
+            VALUE "OriginalFilename", "perdidos_e_achados.exe" "\0"
+            VALUE "ProductName", "perdidos_e_achados" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

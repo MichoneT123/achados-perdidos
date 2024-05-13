@@ -1,28 +1,65 @@
-import 'user.dart';
+import 'package:perdidos_e_achados/models/categoria.dart';
+import 'package:perdidos_e_achados/models/estado.dart';
+import 'package:perdidos_e_achados/models/localizacao.dart';
+
+import 'package:perdidos_e_achados/models/usuario.dart';
 
 class Item {
-  final int id;
-  final String description;
-  final String location;
-  final ItemStatus status;
-  final DateTime registrationDate;
-  final List<String> photos;
-  final User owner;
-  final DateTime? returnDate;
+  final int? id;
+  final String nome;
+  final String? estadoDeDevolucao;
+  final CategoriaDTO categoriaDTO;
+  final LocalizacaoDTO localizacaoDTO;
+  final DateTime? dataEhoraEncontradoOuPerdido;
+  final DateTime? expriracaoNoFeed;
+  final EstadoDTO estadoDTO;
+  final String foto;
+  final UsuarioDto? usuarioDTO;
+  final String? descricao;
 
-  Item({
-    required this.id,
-    required this.description,
-    required this.location,
-    required this.status,
-    required this.registrationDate,
-    required this.photos,
-    required this.owner,
-    this.returnDate,
-  });
-}
+  Item(
+      {this.id,
+      required this.nome,
+      this.estadoDeDevolucao,
+      required this.categoriaDTO,
+      required this.localizacaoDTO,
+      this.dataEhoraEncontradoOuPerdido,
+      this.expriracaoNoFeed,
+      required this.estadoDTO,
+      required this.foto,
+      this.usuarioDTO,
+      this.descricao});
 
-enum ItemStatus {
-  lost,
-  found,
+  factory Item.fromJson(Map<String, dynamic> json) {
+    return Item(
+        id: json["id"],
+        nome: json["nome"],
+        estadoDeDevolucao: json["estadoDeDevolucao"],
+        categoriaDTO: CategoriaDTO.fromJson(json["categoriaDTO"]),
+        localizacaoDTO: LocalizacaoDTO.fromJson(json["localizacaoDTO"]),
+        dataEhoraEncontradoOuPerdido:
+            DateTime.tryParse(json["dataEhoraEncontradoOuPerdido"] ?? ""),
+        expriracaoNoFeed: DateTime.tryParse(json["expriracaoNoFeed"] ?? ""),
+        estadoDTO: EstadoDTO.fromJson(json["estadoDTO"]),
+        foto: json["foto"],
+        descricao: json["descricao"],
+        usuarioDTO: UsuarioDto.fromJson(json["usuarioDTO"]));
+  }
+
+  get telefone => null;
+
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "nome": nome,
+        "estadoDeDevolucao": estadoDeDevolucao,
+        "categoriaDTO": categoriaDTO?.toJson(),
+        "localizacaoDTO": localizacaoDTO?.toJson(),
+        "dataEhoraEncontradoOuPerdido":
+            dataEhoraEncontradoOuPerdido?.toIso8601String(),
+        "expriracaoNoFeed": expriracaoNoFeed?.toIso8601String(),
+        "estadoDTO": estadoDTO?.toJson(),
+        "foto": foto,
+        "usuarioDTO": usuarioDTO?.toJson(),
+        "descricao": descricao,
+      };
 }
