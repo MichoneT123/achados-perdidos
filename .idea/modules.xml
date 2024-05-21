@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/perdidos_e_achados.iml" filepath="$PROJECT_DIR$/perdidos_e_achados.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/perdidos_e_achados_android.iml" filepath="$PROJECT_DIR$/android/perdidos_e_achados_android.iml" />
+    </modules>
+  </component>
+</project>

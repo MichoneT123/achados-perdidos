@@ -1,0 +1,1 @@
+ /home/yanick/StudioProjects/perdidos_e_achados/.dart_tool/flutter_build/156dcf4d06448d428c3bc9ce3b2953e3/native_assets.yaml: 

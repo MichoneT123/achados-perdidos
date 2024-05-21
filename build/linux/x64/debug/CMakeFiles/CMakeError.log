@@ -1,0 +1,936 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_3acfa && [1/2] Building CXX object CMakeFiles/cmTC_3acfa.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_3acfa.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_3acfa.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_3acfa.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_3acfa
+FAILED: cmTC_3acfa 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_3acfa.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_3acfa   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3acfa /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_3acfa.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_098ba && [1/2] Building CXX object CMakeFiles/cmTC_098ba.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_098ba
+FAILED: cmTC_098ba 
+: && /usr/bin/clang++   CMakeFiles/cmTC_098ba.dir/testCXXCompiler.cxx.o -o cmTC_098ba   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_15eb3 && [1/2] Building CXX object CMakeFiles/cmTC_15eb3.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_15eb3.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_15eb3.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_15eb3.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_15eb3
+FAILED: cmTC_15eb3 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_15eb3.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_15eb3   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_15eb3 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_15eb3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_bd06b && [1/2] Building CXX object CMakeFiles/cmTC_bd06b.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_bd06b
+FAILED: cmTC_bd06b 
+: && /usr/bin/clang++   CMakeFiles/cmTC_bd06b.dir/testCXXCompiler.cxx.o -o cmTC_bd06b   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_f7d94 && [1/2] Building CXX object CMakeFiles/cmTC_f7d94.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_f7d94.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_f7d94.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_f7d94.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_f7d94
+FAILED: cmTC_f7d94 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_f7d94.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_f7d94   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f7d94 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_f7d94.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_14a6c && [1/2] Building CXX object CMakeFiles/cmTC_14a6c.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_14a6c
+FAILED: cmTC_14a6c 
+: && /usr/bin/clang++   CMakeFiles/cmTC_14a6c.dir/testCXXCompiler.cxx.o -o cmTC_14a6c   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_adfa7 && [1/2] Building CXX object CMakeFiles/cmTC_adfa7.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_adfa7.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_adfa7.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_adfa7.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_adfa7
+FAILED: cmTC_adfa7 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_adfa7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_adfa7   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_adfa7 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_adfa7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_a752d && [1/2] Building CXX object CMakeFiles/cmTC_a752d.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_a752d
+FAILED: cmTC_a752d 
+: && /usr/bin/clang++   CMakeFiles/cmTC_a752d.dir/testCXXCompiler.cxx.o -o cmTC_a752d   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_5b91b && [1/2] Building CXX object CMakeFiles/cmTC_5b91b.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_5b91b.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_5b91b.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_5b91b.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_5b91b
+FAILED: cmTC_5b91b 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_5b91b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_5b91b   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_5b91b /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_5b91b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_ce9a9 && [1/2] Building CXX object CMakeFiles/cmTC_ce9a9.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_ce9a9
+FAILED: cmTC_ce9a9 
+: && /usr/bin/clang++   CMakeFiles/cmTC_ce9a9.dir/testCXXCompiler.cxx.o -o cmTC_ce9a9   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_3f456 && [1/2] Building CXX object CMakeFiles/cmTC_3f456.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_3f456.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_3f456.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_3f456.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_3f456
+FAILED: cmTC_3f456 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_3f456.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_3f456   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3f456 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_3f456.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_420cb && [1/2] Building CXX object CMakeFiles/cmTC_420cb.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_420cb
+FAILED: cmTC_420cb 
+: && /usr/bin/clang++   CMakeFiles/cmTC_420cb.dir/testCXXCompiler.cxx.o -o cmTC_420cb   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_b8684 && [1/2] Building CXX object CMakeFiles/cmTC_b8684.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_b8684.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_b8684.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b8684.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_b8684
+FAILED: cmTC_b8684 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_b8684.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b8684   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_b8684 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_b8684.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_69b43 && [1/2] Building CXX object CMakeFiles/cmTC_69b43.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_69b43
+FAILED: cmTC_69b43 
+: && /usr/bin/clang++   CMakeFiles/cmTC_69b43.dir/testCXXCompiler.cxx.o -o cmTC_69b43   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_a2e76 && [1/2] Building CXX object CMakeFiles/cmTC_a2e76.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_a2e76.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_a2e76.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_a2e76.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_a2e76
+FAILED: cmTC_a2e76 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_a2e76.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_a2e76   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_a2e76 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_a2e76.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_f3bc3 && [1/2] Building CXX object CMakeFiles/cmTC_f3bc3.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_f3bc3
+FAILED: cmTC_f3bc3 
+: && /usr/bin/clang++   CMakeFiles/cmTC_f3bc3.dir/testCXXCompiler.cxx.o -o cmTC_f3bc3   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_2d130 && [1/2] Building CXX object CMakeFiles/cmTC_2d130.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_2d130.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_2d130.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2d130.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_2d130
+FAILED: cmTC_2d130 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_2d130.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_2d130   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_2d130 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_2d130.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_5bd09 && [1/2] Building CXX object CMakeFiles/cmTC_5bd09.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_5bd09
+FAILED: cmTC_5bd09 
+: && /usr/bin/clang++   CMakeFiles/cmTC_5bd09.dir/testCXXCompiler.cxx.o -o cmTC_5bd09   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_e8659 && [1/2] Building CXX object CMakeFiles/cmTC_e8659.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_e8659.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_e8659.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_e8659.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_e8659
+FAILED: cmTC_e8659 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_e8659.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_e8659   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_e8659 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_e8659.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_6a403 && [1/2] Building CXX object CMakeFiles/cmTC_6a403.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_6a403
+FAILED: cmTC_6a403 
+: && /usr/bin/clang++   CMakeFiles/cmTC_6a403.dir/testCXXCompiler.cxx.o -o cmTC_6a403   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_42e49 && [1/2] Building CXX object CMakeFiles/cmTC_42e49.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_42e49.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_42e49.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_42e49.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_42e49
+FAILED: cmTC_42e49 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_42e49.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_42e49   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_42e49 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_42e49.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_12abe && [1/2] Building CXX object CMakeFiles/cmTC_12abe.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_12abe
+FAILED: cmTC_12abe 
+: && /usr/bin/clang++   CMakeFiles/cmTC_12abe.dir/testCXXCompiler.cxx.o -o cmTC_12abe   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_7a420 && [1/2] Building CXX object CMakeFiles/cmTC_7a420.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_7a420.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_7a420.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7a420.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_7a420
+FAILED: cmTC_7a420 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_7a420.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_7a420   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_7a420 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_7a420.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_6bf41 && [1/2] Building CXX object CMakeFiles/cmTC_6bf41.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_6bf41
+FAILED: cmTC_6bf41 
+: && /usr/bin/clang++   CMakeFiles/cmTC_6bf41.dir/testCXXCompiler.cxx.o -o cmTC_6bf41   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/clang++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_b9a44 && [1/2] Building CXX object CMakeFiles/cmTC_b9a44.dir/CMakeCXXCompilerABI.cpp.o
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_b9a44.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_b9a44.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++ -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b9a44.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/backward"
+ignoring nonexistent directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../include/c++
+ /usr/lib/llvm-14/lib/clang/14.0.0/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_b9a44
+FAILED: cmTC_b9a44 
+: && /usr/bin/clang++  -v CMakeFiles/cmTC_b9a44.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b9a44   && :
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/12
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/bin/ld" -pie --hash-style=both --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_b9a44 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/12/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_b9a44.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/12/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/yanick/StudioProjects/perdidos_e_achados/build/linux/x64/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_2e0e8 && [1/2] Building CXX object CMakeFiles/cmTC_2e0e8.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_2e0e8
+FAILED: cmTC_2e0e8 
+: && /usr/bin/clang++   CMakeFiles/cmTC_2e0e8.dir/testCXXCompiler.cxx.o -o cmTC_2e0e8   && :
+/usr/bin/ld: cannot find -lstdc++: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+

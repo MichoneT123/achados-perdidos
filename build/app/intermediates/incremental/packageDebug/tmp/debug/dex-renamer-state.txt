@@ -1,0 +1,4 @@
+#Tue May 21 16:55:36 CAT 2024
+base.0=/home/yanick/StudioProjects/perdidos_e_achados/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
