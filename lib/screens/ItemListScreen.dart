@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:perdidos_e_achados/models/categoria.dart';
-import 'package:perdidos_e_achados/models/estado.dart';
 import 'package:perdidos_e_achados/models/item.dart';
-import 'package:perdidos_e_achados/models/localizacao.dart';
-import 'package:perdidos_e_achados/models/usuario.dart';
 import 'package:perdidos_e_achados/screens/details_item_screen.dart';
 import 'package:perdidos_e_achados/servicies/itemService.dart';
 import 'package:perdidos_e_achados/widgets_reutilizaveis/cardItem.dart';
@@ -19,13 +15,26 @@ class _ItemListScreenState extends State<ItemListScreen> {
   List<Item>? itens = [];
   late List<Item>? _itensFiltrados = [];
   String _pesquisa = '';
+  bool _isLoading = false;
 
   @override
   void initState() {
     super.initState();
-
     _fetchItems();
-    _itensFiltrados = itens!;
+  }
+
+  void _fetchItems() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    final fetchedItems = await ItemService().itensUsuarioLogado();
+
+    setState(() {
+      itens = fetchedItems;
+      _itensFiltrados = fetchedItems;
+      _isLoading = false;
+    });
   }
 
   void _filtrarItens(String estado, String pesquisa) {
@@ -36,13 +45,6 @@ class _ItemListScreenState extends State<ItemListScreen> {
         return item.estadoDeDevolucao == estado &&
             (pesquisa.isEmpty || nomeItem.contains(pesquisaLower));
       }).toList();
-    });
-  }
-
-  void _fetchItems() async {
-    final fetchedItems = await ItemService().itensUsuarioLogado();
-    setState(() {
-      itens = fetchedItems;
     });
   }
 
@@ -75,7 +77,7 @@ class _ItemListScreenState extends State<ItemListScreen> {
                       _filtrarItens(value!, _pesquisa);
                     }
                   },
-                  items: <String>['Todos', 'NAO_DEVOLVIDO']
+                  items: <String>['Todos', 'Devolvido', 'NAO_DEVOLVIDO']
                       .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
@@ -102,19 +104,25 @@ class _ItemListScreenState extends State<ItemListScreen> {
               ],
             ),
           ),
-          itens == null
-              ? Center(child: Text("Sem itens"))
-              : Expanded(
-                  child: ListView.builder(
-                    itemCount: itens!.length,
-                    itemBuilder: (context, index) {
-                      final item = itens![index];
-                      return CardItem(
-                        item: item,
-                      );
-                    },
+          _isLoading
+              ? Expanded(
+                  child: Center(
+                    child: CircularProgressIndicator(),
                   ),
-                ),
+                )
+              : _itensFiltrados == null
+                  ? Center(child: Text("Sem itens"))
+                  : Expanded(
+                      child: ListView.builder(
+                        itemCount: _itensFiltrados!.length,
+                        itemBuilder: (context, index) {
+                          final item = _itensFiltrados![index];
+                          return CardItem(
+                            item: item,
+                          );
+                        },
+                      ),
+                    ),
         ],
       ),
     );

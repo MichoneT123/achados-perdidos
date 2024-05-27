@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:perdidos_e_achados/Enviroments.dart';
+import 'package:perdidos_e_achados/Environments.dart';
 import 'package:perdidos_e_achados/models/item.dart';
 import 'package:http/http.dart' as http;
 import 'package:perdidos_e_achados/models/registo.dart';
@@ -38,12 +38,9 @@ class ItemService {
         'Authorization': 'Bearer $authToken',
       },
     );
+    print(response.statusCode);
 
-    if (response.statusCode == 200) {
-      return 200;
-    } else {
-      return response.statusCode;
-    }
+    return response.statusCode;
   }
 
   Future<List<Item>?> itemFeed() async {

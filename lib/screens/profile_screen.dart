@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:perdidos_e_achados/servicies/tokenService.dart';
 import 'package:perdidos_e_achados/servicies/userService.dart';
 import 'package:perdidos_e_achados/widgets_reutilizaveis/MyInputField.dart';
 import 'package:image_picker/image_picker.dart';
@@ -32,7 +34,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
   }
 
-  void _fetchUserInfo() async {
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserInfo();
+  }
+
+  Future<void> _fetchUserInfo() async {
     final userInfo = await UserService().userDetails();
     if (userInfo != null) {
       setState(() {
@@ -42,7 +50,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
         phoneController.text = userInfo.telefone ?? '';
       });
     } else {
-      print("Nulo");
+      print("Informações do usuário nulas");
+    }
+  }
+
+  Future<void> _updateUser() async {
+    final userInfo = await UserService().userDetails();
+
+    if (userInfo != null) {
+      int? status = await UserService().updateUser(userInfo);
+
+      if (status == 200) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text("Informacoes do usuario atualizadas "),
+          backgroundColor: Colors.green,
+        ));
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Falha ao tentar atualizar o usuario"),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } else {
+      print("Informações do usuário nulas");
     }
   }
 
@@ -73,15 +105,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: GestureDetector(
                           onTap: _getImage,
                           child: Container(
-                            width: 150.0, // Increased size
-                            height: 150.0, // Increased size
+                            width: 150.0,
+                            height: 150.0,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                color: Colors.grey, // Visible border
+                                color: Colors.grey,
                                 width: 2.0,
                               ),
-                              borderRadius: BorderRadius.circular(
-                                  75.0), // Increased border radius
+                              borderRadius: BorderRadius.circular(75.0),
                               image: _image != null
                                   ? DecorationImage(
                                       image: FileImage(_image!),
@@ -130,9 +161,82 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         isPhoneField: true,
                       ),
                       const SizedBox(height: 20),
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(14),
+                            bottomLeft: Radius.circular(14),
+                            bottomRight: Radius.circular(14),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 16,
+                                color: Colors.black.withOpacity(.2)),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Logout"),
+                            IconButton(
+                                onPressed: () async {
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                      title: Text("Logout"),
+                                      content: const Text(
+                                        "Tem certeza que terminar a secessao?",
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      actions: [
+                                        ElevatedButton(
+                                          onPressed: () async {
+                                            try {
+                                              await AuthService().deleteToken();
+
+                                              Navigator.pushNamed(context, '/');
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                const SnackBar(
+                                                  content:
+                                                      Text('Seccao terminada.'),
+                                                  backgroundColor: Colors.green,
+                                                ),
+                                              );
+                                            } catch (e) {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                const SnackBar(
+                                                  content: Text(
+                                                      'Seccao nao terminada'),
+                                                  backgroundColor: Colors.red,
+                                                ),
+                                              );
+                                            }
+                                            ;
+                                          },
+                                          child: Text("sim"),
+                                        ),
+                                        ElevatedButton(
+                                          onPressed: () async {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: Text("Nao"),
+                                        )
+                                      ],
+                                    ),
+                                  );
+                                },
+                                icon: Icon(Icons.logout))
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 20),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/main');
+                          _updateUser();
                         },
                         child: Container(
                           padding: const EdgeInsets.all(10),

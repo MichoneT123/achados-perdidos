@@ -16,25 +16,29 @@ class Item {
   final String foto;
   final UsuarioDto? usuarioDTO;
   final String? descricao;
+  final DateTime? datapublicacao;
 
-  Item(
-      {this.id,
-      required this.nome,
-      this.estadoDeDevolucao,
-      required this.categoriaDTO,
-      required this.localizacaoDTO,
-      this.dataEhoraEncontradoOuPerdido,
-      this.expriracaoNoFeed,
-      required this.estadoDTO,
-      required this.foto,
-      this.usuarioDTO,
-      this.descricao});
+  Item({
+    this.id,
+    required this.nome,
+    this.estadoDeDevolucao,
+    required this.categoriaDTO,
+    required this.localizacaoDTO,
+    this.dataEhoraEncontradoOuPerdido,
+    this.expriracaoNoFeed,
+    required this.estadoDTO,
+    required this.foto,
+    this.usuarioDTO,
+    this.descricao,
+    this.datapublicacao,
+  });
 
   factory Item.fromJson(Map<String, dynamic> json) {
     return Item(
         id: json["id"],
         nome: json["nome"],
         estadoDeDevolucao: json["estadoDeDevolucao"],
+        datapublicacao: DateTime.tryParse(json["datapublicacao"] ?? ""),
         categoriaDTO: CategoriaDTO.fromJson(json["categoriaDTO"]),
         localizacaoDTO: LocalizacaoDTO.fromJson(json["localizacaoDTO"]),
         dataEhoraEncontradoOuPerdido:
@@ -61,5 +65,6 @@ class Item {
         "foto": foto,
         "usuarioDTO": usuarioDTO?.toJson(),
         "descricao": descricao,
+        "datapublicacao": datapublicacao?.toIso8601String()
       };
 }

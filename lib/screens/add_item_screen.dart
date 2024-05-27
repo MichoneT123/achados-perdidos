@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
@@ -25,12 +26,18 @@ class _AddItemScreenState extends State<AddItemScreen> {
   final TextEditingController descricao = TextEditingController();
   late LocalizacaoDTO? localizacaoDTO = LocalizacaoDTO(id: 1, nome: "Lo");
   late CategoriaDTO? categoriaDTO = CategoriaDTO(id: 1, nome: "Lo");
-  late EstadoDTO? estadoDTO = EstadoDTO(id: 1, nome: "Lo");
+  late EstadoDTO? estadoDTO = EstadoDTO(id: 2, nome: "Lo");
   final TextEditingController textEditingController = TextEditingController();
+
   XFile? _image;
   List<LocalizacaoDTO>? localizacaoDTOs = [];
   List<CategoriaDTO>? categoriaDTOs = [];
   List<EstadoDTO>? estadoDTOs = [];
+  bool _loading = false;
+
+  final FirebaseStorage storage = FirebaseStorage.instanceFor(
+    bucket: 'gs://storageachadoseperdidos.appspot.com',
+  );
 
   Future<void> _getImage() async {
     final picker = ImagePicker();
@@ -56,8 +63,8 @@ class _AddItemScreenState extends State<AddItemScreen> {
         categoriaDTOs = fetchedCategorias;
         localizacaoDTO = fetchedLocalizacoes?.first;
         categoriaDTO = fetchedCategorias?.first;
-        estadoDTOs?.add(EstadoDTO(id: 1, nome: "Perdido"));
-        estadoDTOs?.add(EstadoDTO(id: 2, nome: "Achado"));
+        estadoDTOs?.add(EstadoDTO(id: 2, nome: "Perdido"));
+        estadoDTOs?.add(EstadoDTO(id: 1, nome: "Achado"));
         estadoDTO = estadoDTOs?.first;
       });
     } catch (e) {
@@ -66,10 +73,31 @@ class _AddItemScreenState extends State<AddItemScreen> {
   }
 
   void _registerItem() async {
+    if (_image != null) {
+      try {
+        final file = File(_image!.path);
+        final ref = storage.ref();
+        final uploadTask = ref.putFile(file);
+        await uploadTask.whenComplete(() => print('File uploaded'));
+      } catch (e) {
+        print('Error uploading image: $e');
+
+        setState(() {
+          _loading = false;
+        });
+        return;
+      }
+    }
+    setState(() {
+      _loading = false;
+    });
     if (firstNameController.text.isEmpty ||
         localizacaoDTO == null ||
         categoriaDTO == null ||
         estadoDTO == null) {
+      setState(() {
+        _loading = false;
+      });
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Por favor, preencha todos os campos.'),
@@ -83,6 +111,9 @@ class _AddItemScreenState extends State<AddItemScreen> {
     String formattedDateTime =
         DateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(date);
 
+    String mouth = textEditingController.text.substring(6, 8);
+    print(mouth);
+
     final Itemregister newItem = Itemregister(
       nome: firstNameController.text,
       localizacaoDTO: localizacaoDTO!,
@@ -91,12 +122,15 @@ class _AddItemScreenState extends State<AddItemScreen> {
       descricao: descricao.text,
       dataEhoraEncontradoOuPerdido: formattedDateTime,
       expriracaoNoFeed: "2025-05-12T08:00:00Z",
-      foto: "",
+      foto: "/",
     );
 
     try {
       int? status = await ItemService().registerItem(newItem);
       if (status == 201) {
+        setState(() {
+          _loading = false;
+        });
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Item registrado com sucesso!'),
@@ -104,6 +138,9 @@ class _AddItemScreenState extends State<AddItemScreen> {
           ),
         );
       } else {
+        setState(() {
+          _loading = false;
+        });
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Erro ao registrar o item.'),
@@ -112,8 +149,11 @@ class _AddItemScreenState extends State<AddItemScreen> {
         );
       }
 
-      Navigator.of(context).pop();
+      //Navigator.of(context).pop();
     } catch (e) {
+      setState(() {
+        _loading = false;
+      });
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Erro ao registrar o item.'),
@@ -289,32 +329,36 @@ class _AddItemScreenState extends State<AddItemScreen> {
                           placeholder: "Insira a descrição do item",
                           textEditingController: descricao,
                           isPasswordField: false,
-                          isEmailField: true,
+                          isEmailField: false,
                         ),
                         const SizedBox(height: 20),
-                        GestureDetector(
-                          onTap: _registerItem,
-                          child: Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: const BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(14),
-                                bottomLeft: Radius.circular(14),
-                                bottomRight: Radius.circular(14),
-                              ),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "Registrar",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
+                        _loading == true
+                            ? Center(
+                                child: CircularProgressIndicator(),
+                              )
+                            : GestureDetector(
+                                onTap: _registerItem,
+                                child: Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: const BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(14),
+                                      bottomLeft: Radius.circular(14),
+                                      bottomRight: Radius.circular(14),
+                                    ),
+                                  ),
+                                  child: const Center(
+                                    child: Text(
+                                      "Registrar",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),

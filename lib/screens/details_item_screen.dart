@@ -23,7 +23,7 @@ class ItemDetailsScreen extends StatelessWidget {
               item.foto,
               height: 200,
               width: double.infinity,
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
             SizedBox(height: 16.0),
             Text(
@@ -61,7 +61,7 @@ class ItemDetailsScreen extends StatelessWidget {
               children: [
                 ElevatedButton.icon(
                   onPressed: () async {
-                    if (item.telefone != null) {
+                    if (item.usuarioDTO?.telefone != null) {
                       await launchUrl(
                           Uri.parse('tel:${item.usuarioDTO!.telefone}'));
                     } else {
@@ -82,7 +82,7 @@ class ItemDetailsScreen extends StatelessWidget {
                 ),
                 ElevatedButton.icon(
                   onPressed: () async {
-                    if (item.telefone != null) {
+                    if (item.usuarioDTO?.telefone != null) {
                       String message =
                           'Mensagem sobre o item ${item.nome} encontrado em ${item.localizacaoDTO.nome}. Descrição: ${item.descricao ?? 'N/A'}';
 

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:perdidos_e_achados/Environments.dart';
 import 'package:perdidos_e_achados/models/item.dart';
 
 class PostCard extends StatelessWidget {
@@ -27,7 +29,7 @@ class PostCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    CircleAvatar(
+                    const CircleAvatar(
                       backgroundColor: Colors.blue,
                       radius: 16,
                     ),
@@ -41,10 +43,18 @@ class PostCard extends StatelessWidget {
                                 "Usuário Desconhecido",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          Text(
-                            "Postado em: ${item.dataEhoraEncontradoOuPerdido?.toString() ?? 'Data Desconhecida'}",
-                            style: TextStyle(fontSize: 12, color: Colors.grey),
-                          ),
+                          if (item.datapublicacao != null)
+                            Text(
+                              "Postado em: ${DateFormat("yyyy-MM-dd").format(item!.datapublicacao!)}",
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.grey),
+                            ),
+                          if (item.datapublicacao == null)
+                            const Text(
+                              "Postado em: Data de publicacao desconhecida",
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.grey),
+                            ),
                         ],
                       ),
                     ),
@@ -53,7 +63,8 @@ class PostCard extends StatelessWidget {
                 Container(
                   height: MediaQuery.of(context).size.height * 0.35,
                   width: MediaQuery.of(context).size.width - 20,
-                  child: Image.network(item.foto),
+                  child: Image.network(
+                      '$ApiUrl/api/files/download/Captura%20de%20ecr%C3%A3_2024-03-27_09-33-10.png'),
                 ),
                 Text(
                   item.nome,
@@ -61,7 +72,7 @@ class PostCard extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  "Estado: ${item.estadoDeDevolucao}",
+                  "Estado: ${item.estadoDTO.nome}",
                   style: TextStyle(fontSize: 16, color: Colors.grey),
                 ),
                 SizedBox(height: 10),

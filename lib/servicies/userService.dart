@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:perdidos_e_achados/Enviroments.dart';
+import 'package:perdidos_e_achados/Environments.dart';
 import 'package:perdidos_e_achados/models/usuario.dart';
 
 import 'package:http/http.dart' as http;
@@ -42,7 +42,6 @@ class UserService {
 
       return response.statusCode;
     } else {
-      // Login failed, handle the error
       print('Login failed');
       print(response.body);
       return response.statusCode;
@@ -60,23 +59,37 @@ class UserService {
 
     if (response.statusCode == 200) {
       final dynamic responseData = jsonDecode(response.body);
-
-      // Imprima a resposta para depurar
-      print(responseData);
-
       try {
-        // Tente converter os dados recebidos em um objeto UsuarioDto
         UsuarioDto usuarioDto = UsuarioDto.fromJson(responseData);
         return usuarioDto;
       } catch (e) {
-        // Se houver um erro ao converter os dados, imprima o erro
         print('Erro ao converter os dados: $e');
         return null;
       }
     } else {
-      // Se a resposta não for bem-sucedida, imprima o código de status
       print('Código de status da resposta: ${response.statusCode}');
       return null;
+    }
+  }
+
+  Future<int?> updateUser(UsuarioDto usuarioDto) async {
+    String? token = await AuthService().getToken();
+    final url = Uri.parse('$ApiUrl/usuarios/update/${usuarioDto.id}');
+    final response = await http.put(
+      url,
+      body: jsonEncode(usuarioDto.toJson()),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token'
+      },
+    );
+
+    if (response.statusCode == 200) {
+      print(response.body);
+      return 200;
+    } else {
+      print(response.body);
+      return response.statusCode;
     }
   }
 }

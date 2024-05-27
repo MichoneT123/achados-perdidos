@@ -45,26 +45,18 @@ class CardItem extends StatelessWidget {
                         actions: [
                           ElevatedButton(
                             onPressed: () async {
-                              try {
-                                int? status =
-                                    await ItemService().delete(item.id!);
-                                if (status == 200) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                      content: Text('Item apagado.'),
-                                      backgroundColor: Colors.green,
-                                    ),
-                                  );
-                                } else {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
-                                      content: Text('Item nao apagado'),
-                                      backgroundColor: Colors.red,
-                                    ),
-                                  );
-                                }
+                              int? status =
+                                  await ItemService().delete(item.id!);
+                              if (status == 204) {
                                 Navigator.of(context).pop();
-                              } catch (e) {
+                                Navigator.pushNamed(context, '/my-items');
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text('Item apagado.'),
+                                    backgroundColor: Colors.green,
+                                  ),
+                                );
+                              } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
                                     content: Text('Item nao apagado'),
@@ -72,16 +64,16 @@ class CardItem extends StatelessWidget {
                                   ),
                                 );
                               }
+
                               ;
                             },
-                            child: Text("Nao"),
+                            child: Text("Sim"),
                           ),
                           ElevatedButton(
                             onPressed: () async {
                               Navigator.of(context).pop();
-                              await ItemService().delete(item.id!);
                             },
-                            child: Text("Sim"),
+                            child: Text("Nao"),
                           )
                         ],
                       ),

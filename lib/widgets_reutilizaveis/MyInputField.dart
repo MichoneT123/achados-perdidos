@@ -8,8 +8,8 @@ class MyInputField extends StatelessWidget {
   final String placeholder;
   final TextEditingController textEditingController;
   final bool isPasswordField;
-  final bool? isEmailField; // Tornando isEmailField opcional
-  final bool? isPhoneField; // Tornando isPhoneField opcional
+  final bool? isEmailField;
+  final bool? isPhoneField;
   final bool? isDateField;
 
   const MyInputField(
@@ -47,27 +47,22 @@ class MyInputField extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 8),
                 child: Text(
                   label,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
                   ),
                 ),
               ),
-              // Adicionando o widget PhoneNumberInput se for um campo de telefone e isPhoneField for true
               if (isPhoneField == true)
                 InternationalPhoneNumberInput(
                   selectorConfig: SelectorConfig(
                     selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
                   ),
-                  onInputChanged: (PhoneNumber number) {
-                    // Executar alguma ação quando o número de telefone mudar
-                  },
+                  onInputChanged: (PhoneNumber number) {},
                   selectorTextStyle: TextStyle(color: Colors.black),
                   ignoreBlank: false,
                   autoValidateMode: AutovalidateMode.disabled,
-
-                  initialValue: PhoneNumber(
-                      isoCode: 'MZ'), // Definindo código do país padrão
+                  initialValue: PhoneNumber(isoCode: 'MZ'),
                   textFieldController: textEditingController,
                   inputDecoration: InputDecoration(
                     hintText: placeholder,
@@ -75,7 +70,6 @@ class MyInputField extends StatelessWidget {
                     contentPadding: EdgeInsets.symmetric(vertical: 8),
                   ),
                 ),
-              // Adicionando um TextField padrão se não for um campo de telefone e isEmailField for true
               if (isEmailField == true)
                 TextField(
                   obscureText: isPasswordField,
@@ -90,11 +84,8 @@ class MyInputField extends StatelessWidget {
                     FilteringTextInputFormatter.allow(
                         RegExp(r'[a-zA-Z0-9@.]+')),
                   ],
-                  onChanged: (value) {
-                    // Executar alguma ação quando o texto mudar
-                  },
+                  onChanged: (value) {},
                 ),
-              // Adicionando um TextField padrão se não for um campo de telefone e isPhoneField for false ou null
               if (isPhoneField != true && isEmailField != true)
                 TextField(
                   obscureText: isPasswordField,
@@ -106,9 +97,7 @@ class MyInputField extends StatelessWidget {
                   ),
                   keyboardType: TextInputType.text,
                   inputFormatters: [],
-                  onChanged: (value) {
-                    // Executar alguma ação quando o texto mudar
-                  },
+                  onChanged: (value) {},
                 ),
               if (isDateField == true)
                 InkWell(
