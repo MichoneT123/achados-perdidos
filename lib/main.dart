@@ -1,6 +1,4 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:perdidos_e_achados/firebase_options.dart';
 import 'package:perdidos_e_achados/screens/ItemListScreen.dart';
 import 'package:perdidos_e_achados/screens/add_item_screen.dart';
 import 'package:perdidos_e_achados/screens/feed_screen.dart';
@@ -9,28 +7,13 @@ import 'package:perdidos_e_achados/screens/main_screen.dart';
 import 'package:perdidos_e_achados/screens/profile_screen.dart';
 import 'package:perdidos_e_achados/screens/registration_screen.dart';
 import 'package:perdidos_e_achados/screens/search_item_screen.dart';
-import 'package:perdidos_e_achados/servicies/tokenService.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MyApp());
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  Future<String?> _routByTokenContaines() async {
-    var token = await SharedPreferences.getInstance();
-    String? tokenString = await AuthService().getToken();
-
-    if (tokenString != null) {
-      print(token);
-      return "/main";
-    }
-    return "/login";
-  }
 
   @override
   Widget build(BuildContext context) {

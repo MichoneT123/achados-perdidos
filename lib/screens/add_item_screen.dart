@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
@@ -35,9 +34,6 @@ class _AddItemScreenState extends State<AddItemScreen> {
   List<EstadoDTO>? estadoDTOs = [];
   bool _loading = false;
 
-  final FirebaseStorage storage = FirebaseStorage.instanceFor(
-    bucket: 'gs://storageachadoseperdidos.appspot.com',
-  );
 
   Future<void> _getImage() async {
     final picker = ImagePicker();
@@ -56,7 +52,7 @@ class _AddItemScreenState extends State<AddItemScreen> {
   void _fetchAtributos() async {
     try {
       final fetchedLocalizacoes =
-          await localizacaoService().LocalizacaoDTOFeed();
+      await localizacaoService().LocalizacaoDTOFeed();
       final fetchedCategorias = await categoriaService().CategoriaDTOFeed();
       setState(() {
         localizacaoDTOs = fetchedLocalizacoes;
@@ -73,23 +69,9 @@ class _AddItemScreenState extends State<AddItemScreen> {
   }
 
   void _registerItem() async {
-    if (_image != null) {
-      try {
-        final file = File(_image!.path);
-        final ref = storage.ref();
-        final uploadTask = ref.putFile(file);
-        await uploadTask.whenComplete(() => print('File uploaded'));
-      } catch (e) {
-        print('Error uploading image: $e');
 
-        setState(() {
-          _loading = false;
-        });
-        return;
-      }
-    }
     setState(() {
-      _loading = false;
+      _loading = true;
     });
     if (firstNameController.text.isEmpty ||
         localizacaoDTO == null ||
@@ -109,7 +91,7 @@ class _AddItemScreenState extends State<AddItemScreen> {
 
     DateTime date = DateFormat("yyyy-MM-dd").parse(textEditingController.text);
     String formattedDateTime =
-        DateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(date);
+    DateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(date);
 
     String mouth = textEditingController.text.substring(6, 8);
     print(mouth);
@@ -233,18 +215,18 @@ class _AddItemScreenState extends State<AddItemScreen> {
                           onChanged: (int? idSelecionado) {
                             setState(() {
                               localizacaoDTO = localizacaoDTOs!.firstWhere(
-                                (localizacao) =>
-                                    localizacao.id == idSelecionado,
+                                    (localizacao) =>
+                                localizacao.id == idSelecionado,
                               );
                             });
                           },
                           items: localizacaoDTOs!
                               .map<DropdownMenuItem<int>>(
                                 (localizacao) => DropdownMenuItem<int>(
-                                  value: localizacao.id!,
-                                  child: Text(localizacao.nome!),
-                                ),
-                              )
+                              value: localizacao.id!,
+                              child: Text(localizacao.nome!),
+                            ),
+                          )
                               .toList(),
                         ),
                         DropdownButton<int>(
@@ -268,17 +250,17 @@ class _AddItemScreenState extends State<AddItemScreen> {
                           onChanged: (int? idSelecionado) {
                             setState(() {
                               categoriaDTO = categoriaDTOs!.firstWhere(
-                                (categoria) => categoria.id == idSelecionado,
+                                    (categoria) => categoria.id == idSelecionado,
                               );
                             });
                           },
                           items: categoriaDTOs!
                               .map<DropdownMenuItem<int>>(
                                 (categoria) => DropdownMenuItem<int>(
-                                  value: categoria.id!,
-                                  child: Text(categoria.nome!),
-                                ),
-                              )
+                              value: categoria.id!,
+                              child: Text(categoria.nome!),
+                            ),
+                          )
                               .toList(),
                         ),
                         const SizedBox(height: 20),
@@ -303,17 +285,17 @@ class _AddItemScreenState extends State<AddItemScreen> {
                           onChanged: (int? idSelecionado) {
                             setState(() {
                               estadoDTO = estadoDTOs!.firstWhere(
-                                (estado) => estado.id == idSelecionado,
+                                    (estado) => estado.id == idSelecionado,
                               );
                             });
                           },
                           items: estadoDTOs!
                               .map<DropdownMenuItem<int>>(
                                 (estado) => DropdownMenuItem<int>(
-                                  value: estado.id!,
-                                  child: Text(estado.nome!),
-                                ),
-                              )
+                              value: estado.id!,
+                              child: Text(estado.nome!),
+                            ),
+                          )
                               .toList(),
                         ),
                         const SizedBox(height: 20),
@@ -334,31 +316,31 @@ class _AddItemScreenState extends State<AddItemScreen> {
                         const SizedBox(height: 20),
                         _loading == true
                             ? Center(
-                                child: CircularProgressIndicator(),
-                              )
+                          child: CircularProgressIndicator(),
+                        )
                             : GestureDetector(
-                                onTap: _registerItem,
-                                child: Container(
-                                  padding: const EdgeInsets.all(10),
-                                  decoration: const BoxDecoration(
-                                    color: Colors.blue,
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(14),
-                                      bottomLeft: Radius.circular(14),
-                                      bottomRight: Radius.circular(14),
-                                    ),
-                                  ),
-                                  child: const Center(
-                                    child: Text(
-                                      "Registrar",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                      ),
-                                    ),
-                                  ),
+                          onTap: _registerItem,
+                          child: Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: const BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(14),
+                                bottomLeft: Radius.circular(14),
+                                bottomRight: Radius.circular(14),
+                              ),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                "Registrar",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
                                 ),
                               ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
