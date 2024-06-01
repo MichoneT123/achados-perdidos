@@ -3,6 +3,7 @@ import 'package:perdidos_e_achados/models/estado.dart';
 import 'package:perdidos_e_achados/models/localizacao.dart';
 
 class Itemregister {
+  int? id;
   String nome;
   CategoriaDTO categoriaDTO;
   LocalizacaoDTO localizacaoDTO;
@@ -13,6 +14,7 @@ class Itemregister {
   String descricao;
 
   Itemregister({
+    this.id,
     required this.nome,
     required this.categoriaDTO,
     required this.localizacaoDTO,
@@ -25,6 +27,7 @@ class Itemregister {
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'nome': nome,
       'categoriaDTO': categoriaDTO.toJson(),
       'localizacaoDTO': localizacaoDTO.toJson(),

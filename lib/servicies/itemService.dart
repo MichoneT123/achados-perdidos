@@ -28,6 +28,27 @@ class ItemService {
     }
   }
 
+  Future<int?> atualizarItem(Itemregister item) async {
+    String? authToken = await AuthService().getToken();
+    final url = Uri.parse('$ApiUrl/itens/update/${item.id}');
+    final response = await http.put(
+      url,
+      body: jsonEncode(item.toJson()),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $authToken',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      print(response.body);
+      return 200;
+    } else {
+      print(response.body);
+      return response.statusCode;
+    }
+  }
+
   Future<int?> delete(int id) async {
     String? authToken = await AuthService().getToken();
     final url = Uri.parse('$ApiUrl/itens/delete/$id');

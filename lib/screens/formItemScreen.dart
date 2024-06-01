@@ -28,6 +28,8 @@ class _FormItemScreenState extends State<FormItemScreen> {
   LocalizacaoDTO? localizacaoDTO;
   CategoriaDTO? categoriaDTO;
   EstadoDTO? estadoDTO;
+  int? id;
+  String? foto = '/';
 
   XFile? _image;
   List<LocalizacaoDTO>? localizacaoDTOs = [];
@@ -59,6 +61,8 @@ class _FormItemScreenState extends State<FormItemScreen> {
 
     if (item != null) {
       setState(() {
+        foto = item.foto;
+        id = item.id;
         _isUpdate = true;
         firstNameController.text = item.nome ?? '';
         descricao.text = item.descricao ?? '';
@@ -173,6 +177,80 @@ class _FormItemScreenState extends State<FormItemScreen> {
         ),
       );
       print('Error registering item: $e');
+    }
+  }
+
+  void _atualizarItem() async {
+    setState(() {
+      _loading = true;
+    });
+    if (firstNameController.text.isEmpty ||
+        localizacaoDTO == null ||
+        categoriaDTO == null ||
+        estadoDTO == null) {
+      setState(() {
+        _loading = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Por favor, preencha todos os campos.'),
+          backgroundColor: Colors.red,
+        ),
+      );
+      return;
+    }
+
+    DateTime date = DateFormat("yyyy-MM-dd").parse(textEditingController.text);
+    String formattedDateTime =
+        DateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(date);
+
+    final Itemregister newItem = Itemregister(
+      id: id,
+      nome: firstNameController.text,
+      localizacaoDTO: localizacaoDTO!,
+      categoriaDTO: categoriaDTO!,
+      estadoDTO: estadoDTO!,
+      descricao: descricao.text,
+      dataEhoraEncontradoOuPerdido: formattedDateTime,
+      expriracaoNoFeed: "2025-05-12T08:00:00Z",
+      foto: foto!,
+    );
+
+    try {
+      int? status = await ItemService().atualizarItem(newItem);
+      if (status == 200) {
+        setState(() {
+          _loading = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Item ataulizado com sucesso!'),
+            backgroundColor: Colors.green,
+          ),
+        );
+        Navigator.of(context).pop();
+      } else {
+        setState(() {
+          _loading = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Erro ao atualizar o item.'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } catch (e) {
+      setState(() {
+        _loading = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Erro ao atualizar o item.'),
+          backgroundColor: Colors.red,
+        ),
+      );
+      print('Error atualizar item: $e');
     }
   }
 
@@ -322,7 +400,7 @@ class _FormItemScreenState extends State<FormItemScreen> {
                   _loading
                       ? const Center(child: CircularProgressIndicator())
                       : GestureDetector(
-                          onTap: _isUpdate ? _registerItem : _registerItem,
+                          onTap: _isUpdate ? _atualizarItem : _registerItem,
                           child: Container(
                             padding: const EdgeInsets.all(10),
                             decoration: const BoxDecoration(
