@@ -59,6 +59,7 @@ class _LoginDesktopState extends State<AdminScreenLoginWeb> {
                   ? const CircularProgressIndicator()
                   : GestureDetector(
                       onTap: () async {
+                        Navigator.pushNamed(context, '/admin');
                         setState(() {
                           loading = true;
                           email = emailController.text;
@@ -68,7 +69,6 @@ class _LoginDesktopState extends State<AdminScreenLoginWeb> {
                             await UserService().loginUser(email, password);
 
                         if (code == 200) {
-                          Navigator.pushNamed(context, '/main');
                         } else {
                           setState(() {
                             erro_login = true;
@@ -117,7 +117,7 @@ class _LoginDesktopState extends State<AdminScreenLoginWeb> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "/registration");
+                      Navigator.pushNamed(context, "/admin");
                     },
                     child: const Text(
                       " Clique aqui!",

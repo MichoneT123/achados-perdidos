@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perdidos_e_achados/AdminScrensWeb/PainelAdmin.dart';
 import 'package:perdidos_e_achados/screens/ItemListScreen.dart';
 import 'package:perdidos_e_achados/AdminScrensWeb/adminScreenLoginWeb.dart';
 import 'package:perdidos_e_achados/screens/formItemScreen.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
         '/search_item': (context) => SearchItemScreen(),
         '/feed': (context) => FeedScreen(),
         '/profile': (context) => ProfileScreen(),
-        '/my-items': (context) => ItemListScreen()
+        '/my-items': (context) => ItemListScreen(),
+        '/admin': (context) => paineladminScreen()
       },
     );
   }
