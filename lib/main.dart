@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:perdidos_e_achados/screens/ItemListScreen.dart';
+import 'package:perdidos_e_achados/AdminScrensWeb/adminScreenLoginWeb.dart';
 import 'package:perdidos_e_achados/screens/formItemScreen.dart';
 import 'package:perdidos_e_achados/screens/feed_screen.dart';
 import 'package:perdidos_e_achados/screens/login_screen.dart';
 import 'package:perdidos_e_achados/screens/main_screen.dart';
 import 'package:perdidos_e_achados/screens/profile_screen.dart';
 import 'package:perdidos_e_achados/screens/registration_screen.dart';
+import 'package:perdidos_e_achados/screens/responsiveLeyout.dart';
 import 'package:perdidos_e_achados/screens/search_item_screen.dart';
 
 void main() {
@@ -24,7 +26,9 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSwatch(accentColor: Colors.blue)),
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginScreen(),
+        '/': (context) => const ResponsiveLayoutLoginScreen(
+            mobileScaffold: LoginScreen(),
+            desktopScaffold: AdminScreenLoginWeb()),
         '/registration': (context) => const RegisterScreen(),
         '/main': (context) => const MainScreen(),
         '/add_item': (context) => const FormItemScreen(),
