@@ -27,7 +27,10 @@ class CardItem extends StatelessWidget {
           child: Row(
             children: <Widget>[
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushNamed('/add_item', arguments: item);
+                  },
                   icon: Icon(
                     Icons.edit,
                     color: Colors.orange,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:perdidos_e_achados/screens/ItemListScreen.dart';
-import 'package:perdidos_e_achados/screens/add_item_screen.dart';
+import 'package:perdidos_e_achados/screens/formItemScreen.dart';
 import 'package:perdidos_e_achados/screens/feed_screen.dart';
 import 'package:perdidos_e_achados/screens/login_screen.dart';
 import 'package:perdidos_e_achados/screens/main_screen.dart';
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const LoginScreen(),
         '/registration': (context) => const RegisterScreen(),
         '/main': (context) => const MainScreen(),
-        '/add_item': (context) => const AddItemScreen(),
+        '/add_item': (context) => const FormItemScreen(),
         '/search_item': (context) => SearchItemScreen(),
         '/feed': (context) => FeedScreen(),
         '/profile': (context) => ProfileScreen(),
