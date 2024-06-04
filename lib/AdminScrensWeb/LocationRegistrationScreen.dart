@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:perdidos_e_achados/models/categoria.dart';
 import 'package:perdidos_e_achados/models/localizacao.dart';
 import 'package:perdidos_e_achados/servicies/localizacaoService.dart';
 import 'package:perdidos_e_achados/widgets_reutilizaveis/MyInputField.dart';
@@ -23,35 +22,61 @@ class _LocationRegistrationScreenState
     _fetchLocalizacoes();
   }
 
-  void _fetchLocalizacoes() async {
+  Future<void> _fetchLocalizacoes() async {
+    setState(() {
+      _isLoading = true;
+    });
     try {
-      setState(() {
-        _isLoading = true;
-      });
       final fetchedLocalizacoes =
           await localizacaoService().LocalizacaoDTOFeed();
       setState(() {
         localizacaoDTOs = fetchedLocalizacoes;
-        _isLoading = false;
       });
     } catch (e) {
       print('Erro ao buscar localizações: $e');
+    } finally {
       setState(() {
         _isLoading = false;
       });
     }
   }
 
-  void _addLocalizacao() async {
+  Future<void> _addLocalizacao() async {
+    if (_locationController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Preencha o campo.'),
+          backgroundColor: Color.fromARGB(255, 255, 0, 0),
+        ),
+      );
+      return;
+    }
+
+    setState(() {
+      nome = _locationController.text;
+    });
+
     try {
-      setState(() {
-        nome = _locationController.text;
-      });
-      await localizacaoService()
+      final responseStatus = await localizacaoService()
           .registerLocalizacao(LocalizacaoDTO(nome: nome));
-      _fetchLocalizacoes();
+      if (responseStatus == 201) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Localização registrada com sucesso.'),
+            backgroundColor: Colors.green,
+          ),
+        );
+        _fetchLocalizacoes();
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Falha ao registrar localização.'),
+            backgroundColor: Color.fromARGB(255, 255, 0, 0),
+          ),
+        );
+      }
     } catch (e) {
-      print(e);
+      print('Erro ao registrar localização: $e');
     }
   }
 
@@ -107,7 +132,7 @@ class _LocationRegistrationScreenState
               flex: 2,
               child: SingleChildScrollView(
                 child: _isLoading
-                    ? Center(child: CircularProgressIndicator())
+                    ? const Center(child: CircularProgressIndicator())
                     : DataTable(
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -124,7 +149,7 @@ class _LocationRegistrationScreenState
                           ],
                         ),
                         columnSpacing: 32.0,
-                        dataTextStyle: TextStyle(fontSize: 16.0),
+                        dataTextStyle: const TextStyle(fontSize: 16.0),
                         columns: const [
                           DataColumn(
                             label: Text(
@@ -148,15 +173,17 @@ class _LocationRegistrationScreenState
                             ),
                           ),
                         ],
-                        rows: localizacaoDTOs!.map((categoria) {
+                        rows: localizacaoDTOs!.map((localizacao) {
                           return DataRow(cells: [
-                            DataCell(Text(categoria.nome ?? '')),
-                            DataCell(Text(categoria.id.toString())),
+                            DataCell(Text(localizacao.nome ?? '')),
+                            DataCell(Text(localizacao.id.toString())),
                             DataCell(Row(
                               children: [
                                 IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
+                                  onPressed: () {
+                                    // Handle edit action
+                                  },
+                                  icon: const Icon(
                                     Icons.edit,
                                     color: Colors.orange,
                                   ),
@@ -166,7 +193,7 @@ class _LocationRegistrationScreenState
                                     showDialog(
                                       context: context,
                                       builder: (context) => AlertDialog(
-                                        title: Text("Excluir"),
+                                        title: const Text("Excluir"),
                                         content: const Text(
                                           "Tem certeza?",
                                           style: TextStyle(fontSize: 20),
@@ -174,12 +201,12 @@ class _LocationRegistrationScreenState
                                         actions: [
                                           ElevatedButton(
                                             onPressed: () async {
+                                              // Implement delete functionality here
                                               int? status =
-                                                  5; // Update this with the real status from your delete operation
+                                                  204; // Update this with the real status from your delete operation
                                               if (status == 204) {
                                                 Navigator.of(context).pop();
-                                                Navigator.pushNamed(
-                                                    context, '/my-items');
+                                                _fetchLocalizacoes();
                                                 ScaffoldMessenger.of(context)
                                                     .showSnackBar(
                                                   const SnackBar(
@@ -200,26 +227,28 @@ class _LocationRegistrationScreenState
                                                 );
                                               }
                                             },
-                                            child: Text("Sim"),
+                                            child: const Text("Sim"),
                                           ),
                                           ElevatedButton(
                                             onPressed: () {
                                               Navigator.of(context).pop();
                                             },
-                                            child: Text("Não"),
+                                            child: const Text("Não"),
                                           ),
                                         ],
                                       ),
                                     );
                                   },
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.delete,
                                     color: Colors.red,
                                   ),
                                 ),
                                 IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
+                                  onPressed: () {
+                                    // Handle view action
+                                  },
+                                  icon: const Icon(
                                     Icons.remove_red_eye_sharp,
                                     color: Colors.green,
                                   ),
