@@ -16,7 +16,7 @@ class categoriaService {
         headers: {
           'Content-Type': 'application/json',
           'Authorization':
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJwaXp6dXJnLWFwaSIsImlhdCI6MTcxNzQ1ODc4Mywic3ViIjoidmljQGdtYWlsLmNvbSIsInVzZXJJbmZvIjp7InVzZXJJZCI6MTYsImVtYWlsIjoidmljQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidmljQGdtYWlsLmNvbSJ9fQ.xf-TPjcCbSrt0ZHeYhvxcW9QalStBLWtEuNyl6CX94I',
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJwaXp6dXJnLWFwaSIsImlhdCI6MTcxNzQ2NDM5NSwic3ViIjoieWFuaWNrLnJpYmVpcm8yM0BnbWFpbC5jb20iLCJ1c2VySW5mbyI6eyJ1c2VySWQiOjksImVtYWlsIjoieWFuaWNrLnJpYmVpcm8yM0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Inlhbmljay5yaWJlaXJvMjNAZ21haWwuY29tIn19.5ikX0DzGGB1toRpplEWuJlNGkdz2nB16wA5g9G_hvnw',
         },
       );
 
@@ -50,6 +50,28 @@ class categoriaService {
     } catch (e) {
       print('Error fetching CategoriaDTOs: $e');
       return null;
+    }
+  }
+
+  Future<int?> registerLocalizacao(CategoriaDTO categoria) async {
+    final url = Uri.parse('$ApiUrl/categorias/registar');
+    final response = await http.post(
+      url,
+      body: jsonEncode(categoria.toJson()),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization':
+            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJwaXp6dXJnLWFwaSIsImlhdCI6MTcxNzQ2MTE3Niwic3ViIjoieWFuaWNrLnJpYmVpcm8yM0BnbWFpbC5jb20iLCJ1c2VySW5mbyI6eyJ1c2VySWQiOjksImVtYWlsIjoieWFuaWNrLnJpYmVpcm8yM0BnbWFpbC5jb20iLCJ1c2VybmFtZSI6Inlhbmljay5yaWJlaXJvMjNAZ21haWwuY29tIn19.5LRFRHHLR1SDJmIMajou4B5gxgPMIzr0Yk3hpUyf2J0',
+      },
+    );
+
+    if (response.statusCode == 201) {
+      print(response.body);
+      return response.statusCode;
+    } else {
+      print('Registration failed');
+      print(response.body);
+      return response.statusCode;
     }
   }
 }

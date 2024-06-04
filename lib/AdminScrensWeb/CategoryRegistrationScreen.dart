@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:perdidos_e_achados/models/categoria.dart';
-import 'package:perdidos_e_achados/widgets_reutilizaveis/MyInputField.dart'; // Importe o modelo Categoria
+import 'package:perdidos_e_achados/servicies/categoriaService.dart';
+import 'package:perdidos_e_achados/widgets_reutilizaveis/MyInputField.dart';
 
 class CategoryRegistrationScreen extends StatefulWidget {
   @override
@@ -10,9 +11,89 @@ class CategoryRegistrationScreen extends StatefulWidget {
 
 class _CategoryRegistrationScreenState
     extends State<CategoryRegistrationScreen> {
-  final List<CategoriaDTO> categories = []; // Lista de categorias
+  List<CategoriaDTO>? categories = [];
   final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _idController = TextEditingController();
+  bool _isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchCategorias();
+  }
+
+  Future<void> _fetchCategorias() async {
+    setState(() {
+      _isLoading = true;
+    });
+    try {
+      final fetchedCategorias = await categoriaService().CategoriaDTOFeed();
+      setState(() {
+        categories = fetchedCategorias;
+      });
+    } catch (e) {
+      print('Erro ao buscar categorias: $e');
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
+  Future<void> _addCategoria() async {
+    final String name = _nameController.text;
+    if (name.isEmpty) {
+      return;
+    }
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      await categoriaService()
+          .registerLocalizacao(CategoriaDTO(nome: name, id: null));
+      _nameController.clear();
+      _fetchCategorias();
+    } catch (e) {
+      print('Erro ao adicionar categoria: $e');
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
+  Future<void> _deleteCategoria(int id) async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      final status = 9;
+      if (status == 204) {
+        _fetchCategorias();
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Item apagado.'),
+            backgroundColor: Colors.green,
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Item não apagado'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } catch (e) {
+      print('Erro ao deletar categoria: $e');
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +110,14 @@ class _CategoryRegistrationScreenState
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   MyInputField(
-                    placeholder: "Nome da Localização",
+                    placeholder: "Nome da Categoria",
                     textEditingController: _nameController,
-                    label: "Localização",
+                    label: "Categoria",
                     isPasswordField: false,
                   ),
                   const SizedBox(height: 20),
                   GestureDetector(
-                    //onTap: _addLocalizacao,
+                    onTap: _addCategoria,
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       decoration: const BoxDecoration(
@@ -65,47 +146,115 @@ class _CategoryRegistrationScreenState
             Expanded(
               flex: 2,
               child: SingleChildScrollView(
-                child: DataTable(
-                  // Add border decoration
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(14),
-                      bottomLeft: Radius.circular(14),
-                      bottomRight: Radius.circular(14),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 16,
-                        color: Colors.black.withOpacity(.2),
-                      ),
-                    ],
-                  ),
-                  columnSpacing: 32.0, // Add spacing between columns
-                  dataTextStyle: TextStyle(fontSize: 16.0), // Adjust font size
-                  columns: [
-                    DataColumn(
-                      label: Text(
-                        'Nome',
-                        style: TextStyle(
-                            fontSize: 18.0, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    DataColumn(
-                      label: Text(
-                        'ID',
-                        style: TextStyle(
-                            fontSize: 18.0, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                  rows: categories.map((categoria) {
-                    return DataRow(cells: [
-                      DataCell(Text(categoria.nome ?? '')),
-                      DataCell(Text(categoria.id.toString())),
-                    ]);
-                  }).toList(),
-                ),
+                child: _isLoading
+                    ? Center(child: CircularProgressIndicator())
+                    : categories == null
+                        ? Center(child: Text('Erro ao carregar categorias'))
+                        : DataTable(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(14),
+                                bottomLeft: Radius.circular(14),
+                                bottomRight: Radius.circular(14),
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 16,
+                                  color: Colors.black.withOpacity(.2),
+                                ),
+                              ],
+                            ),
+                            columnSpacing: 32.0,
+                            dataTextStyle: TextStyle(fontSize: 16.0),
+                            columns: [
+                              DataColumn(
+                                label: Text(
+                                  'Nome',
+                                  style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'ID',
+                                  style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'Ações',
+                                  style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
+                            rows: categories!.map((categoria) {
+                              return DataRow(cells: [
+                                DataCell(Text(categoria.nome ?? '')),
+                                DataCell(Text(categoria.id.toString())),
+                                DataCell(Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {
+                                        // Handle edit action
+                                      },
+                                      icon: const Icon(
+                                        Icons.edit,
+                                        color: Colors.orange,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      onPressed: () {
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) => AlertDialog(
+                                            title: const Text("Excluir"),
+                                            content: const Text(
+                                              "Tem certeza?",
+                                              style: TextStyle(fontSize: 20),
+                                            ),
+                                            actions: [
+                                              ElevatedButton(
+                                                onPressed: () async {
+                                                  //  await _deleteCategoria(categoria.id);
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: const Text("Sim"),
+                                              ),
+                                              ElevatedButton(
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: const Text("Não"),
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                      icon: const Icon(
+                                        Icons.delete,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    IconButton(
+                                      onPressed: () {
+                                        // Handle view action
+                                      },
+                                      icon: const Icon(
+                                        Icons.remove_red_eye_sharp,
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                  ],
+                                ))
+                              ]);
+                            }).toList(),
+                          ),
               ),
             ),
           ],
