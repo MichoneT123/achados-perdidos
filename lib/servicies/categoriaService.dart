@@ -15,7 +15,8 @@ class categoriaService {
         url,
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer $authToken',
+          'Authorization':
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJwaXp6dXJnLWFwaSIsImlhdCI6MTcxNzQ1ODc4Mywic3ViIjoidmljQGdtYWlsLmNvbSIsInVzZXJJbmZvIjp7InVzZXJJZCI6MTYsImVtYWlsIjoidmljQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidmljQGdtYWlsLmNvbSJ9fQ.xf-TPjcCbSrt0ZHeYhvxcW9QalStBLWtEuNyl6CX94I',
         },
       );
 

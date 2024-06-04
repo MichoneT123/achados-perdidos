@@ -1,7 +1,7 @@
 class LocalizacaoDTO {
   LocalizacaoDTO({
-    required this.id,
-    required this.nome,
+    this.id,
+    this.nome,
   });
 
   final int? id;
